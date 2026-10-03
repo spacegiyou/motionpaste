@@ -1,0 +1,151 @@
+{
+  "measuredAt": "2026-10-03T05:30:09.867Z",
+  "scope": "Actual release ZIP installed in a fresh Chromium profile; real extension Studio imports, controls, JSON/JavaScript downloads and downloaded-script execution. File-read ordering and download API failures are explicitly injected. No public-site or cross-browser claim.",
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "empty Studio and keyboard import expose honest provenance",
+      "status": "PASS",
+      "details": {
+        "state": "IMPORTED",
+        "keyboardFileChooser": true,
+        "neutralPreview": true
+      }
+    },
+    {
+      "name": "precise 733 ms survives controls and actual JSON/JS downloads",
+      "status": "PASS",
+      "details": {
+        "control": "number input via keyboard",
+        "duration": 733,
+        "jsonName": "motionpaste-recipe.json",
+        "javascriptName": "motionpaste.js",
+        "jsonSHA256": "cd5050f56e1b3bb3ec40ab74f5c5e260cc8fbdc21e6095982823c0ba01cf47ec",
+        "javascriptSHA256": "68ec481b03d4081e00ae889545711e0b4935d93cd7e03fd2badbd0cf3ba8a1c2",
+        "executedDownloadedJavaScript": {
+          "duration": 733,
+          "remainingAnimations": 0,
+          "corePresent": "undefined"
+        }
+      }
+    },
+    {
+      "name": "precise 2333 ms survives controls and actual JSON/JS downloads",
+      "status": "PASS",
+      "details": {
+        "control": "range input with dispatched DOM input event",
+        "duration": 2333,
+        "jsonName": "motionpaste-recipe.json",
+        "javascriptName": "motionpaste.js",
+        "jsonSHA256": "cfda821016ce8a393e9f46f498b5f0eb3b9cb5a041f6467dbfa3b039f8307538",
+        "javascriptSHA256": "285a1164fba51f4dd049f90c3b82c0eabe704fa80611a1bc825d5c71321e9593",
+        "executedDownloadedJavaScript": {
+          "duration": 2333,
+          "remainingAnimations": 0,
+          "corePresent": "undefined"
+        }
+      }
+    },
+    {
+      "name": "comparison uses loaded timing while pause/resume/reset preserve EDITED",
+      "status": "PASS",
+      "details": {
+        "leftDuration": 1300,
+        "rightDuration": 2333,
+        "finalState": "EDITED",
+        "screenshot": "artifacts/verification/studio-r1-desktop.png"
+      }
+    },
+    {
+      "name": "restoring captured JSON loaded by import returns IMPORTED",
+      "status": "PASS"
+    },
+    {
+      "name": "imported edited baseline restores 733 ms instead of historical 1300 ms",
+      "status": "PASS",
+      "details": {
+        "loadedDuration": 733,
+        "originalDuration": 1300,
+        "restoredDuration": 733
+      }
+    },
+    {
+      "name": "invalid and oversized imports preserve the current edited recipe",
+      "status": "PASS",
+      "details": {
+        "preservedDuration": 733,
+        "errors": [
+          {
+            "name": "broken.json",
+            "visibleError": "This file is not valid JSON."
+          },
+          {
+            "name": "oversize.json",
+            "visibleError": "Recipes are limited to 64 KiB. Choose a smaller MotionPaste JSON file."
+          }
+        ]
+      }
+    },
+    {
+      "name": "delayed older File.text never overwrites newer import or clears its selection",
+      "status": "PASS",
+      "details": {
+        "injected": "File.prototype.text promises resolved in both completion orders",
+        "newerRecipePreserved": 2333,
+        "newerSelectionPreserved": "new-second.json",
+        "finalDuration": 1555
+      }
+    },
+    {
+      "name": "download createObjectURL failure is visible and preserves work",
+      "status": "PASS",
+      "details": {
+        "injected": "createObjectURL",
+        "visibleError": true,
+        "temporaryAnchorsRemoved": true,
+        "revokedURLs": 0,
+        "subsequentActualDownloadSucceeded": true
+      }
+    },
+    {
+      "name": "download anchor-click failure is visible and preserves work",
+      "status": "PASS",
+      "details": {
+        "injected": "anchor-click",
+        "visibleError": true,
+        "temporaryAnchorsRemoved": true,
+        "revokedURLs": 1,
+        "subsequentActualDownloadSucceeded": true
+      }
+    },
+    {
+      "name": "reduced motion requires an explicit preview and does not persist consent",
+      "status": "PASS",
+      "details": {
+        "explicitPreviewWorked": true,
+        "normalPlaybackBlockedAfterReset": true
+      }
+    },
+    {
+      "name": "390px Studio has no page overflow with recipe details open",
+      "status": "PASS",
+      "details": {
+        "viewport": 390,
+        "documentWidth": 390,
+        "bodyWidth": 390,
+        "screenshot": "artifacts/verification/studio-r1-mobile.png"
+      }
+    }
+  ],
+  "errors": [],
+  "archiveSHA256": "84bd6e18797eb0ada095a58341590006307f332f9f14be1b63a398f2420a8e01",
+  "archive": "artifacts/release/motionpaste-0.1.0-beta.2.zip",
+  "archiveMemberHashesVerified": 10,
+  "fixture": {
+    "path": "artifacts/verification/captured-recipe.json",
+    "originalDuration": 1300
+  },
+  "browser": "153.0.8010.12",
+  "playwright": "1.63.0",
+  "node": "v25.9.0"
+}

@@ -1,0 +1,20 @@
+1
+00:00:00,000 --> 00:00:03,000
+Copy the motion. Keep your design.
+
+2
+00:00:03,000 --> 00:00:06,000
+Select a supported animation in your own web app.
+
+3
+00:00:06,000 --> 00:00:10,000
+1,300 → 733 ms. Compare loaded and edited timing.
+
+4
+00:00:10,000 --> 00:00:12,000
+Download JavaScript from the real Studio.
+
+5
+00:00:12,000 --> 00:00:15,000
+Self-contained JavaScript.
+No extension or external library required.

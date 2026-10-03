@@ -1,0 +1,255 @@
+{
+  "measuredAt": "2026-10-03T05:30:03.772Z",
+  "scope": "Actual ZIP in a fresh temporary extension profile; independently authored WAAPI fixture; actual toolbar action and popup; downloaded Studio JS replayed in a separate Chromium process with no extension loaded. No built core or existing report is used as test evidence.",
+  "status": "PASS",
+  "archive": "artifacts/release/motionpaste-0.1.0-beta.2.zip",
+  "archiveSHA256": "84bd6e18797eb0ada095a58341590006307f332f9f14be1b63a398f2420a8e01",
+  "checks": [
+    {
+      "name": "ZIP checksum, exact members, member hashes and manifest scope",
+      "status": "PASS",
+      "details": {
+        "members": [
+          "LICENSE",
+          "SHA256SUMS.json",
+          "manifest.json",
+          "picker.js",
+          "popup.css",
+          "popup.html",
+          "popup.js",
+          "studio.css",
+          "studio.html",
+          "studio.js",
+          "worker.js"
+        ],
+        "verifiedMembers": 10,
+        "manifest": {
+          "manifest_version": 3,
+          "name": "MotionPaste",
+          "version": "0.1.0.2",
+          "version_name": "0.1.0-beta.2",
+          "description": "Copy supported CSS and Web Animations motion into a neutral preview and export portable JavaScript.",
+          "minimum_chrome_version": "120",
+          "permissions": [
+            "activeTab",
+            "scripting",
+            "storage"
+          ],
+          "action": {
+            "default_title": "MotionPaste — copy the motion",
+            "default_popup": "popup.html"
+          },
+          "background": {
+            "service_worker": "worker.js",
+            "type": "module"
+          },
+          "content_security_policy": {
+            "extension_pages": "script-src 'self'; object-src 'none'; base-uri 'none'; connect-src 'none'"
+          }
+        }
+      }
+    },
+    {
+      "name": "Packaged runtime has no external imports or dynamic code evaluation",
+      "status": "PASS",
+      "details": {
+        "scanned": [
+          "picker.js",
+          "popup.css",
+          "popup.html",
+          "popup.js",
+          "studio.css",
+          "studio.html",
+          "studio.js",
+          "worker.js"
+        ],
+        "method": "Static scans of all packaged JS, HTML and CSS; observed requests are checked separately."
+      }
+    },
+    {
+      "name": "Fresh profile Studio starts empty with playback and export disabled",
+      "status": "PASS",
+      "details": {
+        "state": "WAITING",
+        "captures": 0,
+        "animations": 0
+      }
+    },
+    {
+      "name": "Actual toolbar action → popup → WAAPI element selection → captured Studio",
+      "status": "PASS",
+      "details": {
+        "selectedMode": "waapi",
+        "state": "CAPTURED",
+        "captureCount": 1,
+        "recipe": {
+          "context": {
+            "transformOrigin": "125px 142.5px"
+          },
+          "keyframes": [
+            {
+              "easing": "linear",
+              "offset": 0,
+              "opacity": 0,
+              "transform": "translateX(-45px) scale(0.88)"
+            },
+            {
+              "easing": "linear",
+              "offset": 0.6,
+              "opacity": 0.95,
+              "transform": "translateX(8px) scale(1.04)"
+            },
+            {
+              "easing": "linear",
+              "offset": 1,
+              "opacity": 1,
+              "transform": "translateX(0px) scale(1)"
+            }
+          ],
+          "originalDuration": 1600,
+          "status": "captured",
+          "timing": {
+            "delay": 0,
+            "direction": "normal",
+            "duration": 1600,
+            "easing": "ease-in-out",
+            "endDelay": 0,
+            "fill": "both",
+            "iterationStart": 0,
+            "iterations": 1
+          },
+          "version": 1
+        },
+        "sourceDocumentSHA256Before": "72951ef293f9c7cefb22f800cd2859b03e94575a49ef20eb9a943bc5c3c980c5",
+        "sourceDocumentSHA256After": "72951ef293f9c7cefb22f800cd2859b03e94575a49ef20eb9a943bc5c3c980c5",
+        "sourceTargetSHA256Before": "fa7af9e5430f8902c5047e955a29aa66566d1e18a1bcaf4c98ab28900d72e95f",
+        "sourceTargetSHA256After": "fa7af9e5430f8902c5047e955a29aa66566d1e18a1bcaf4c98ab28900d72e95f",
+        "sourceAnimationUnchanged": true
+      }
+    },
+    {
+      "name": "Studio duration edit to 900 ms and actual JS/JSON downloads",
+      "status": "PASS",
+      "details": {
+        "recipe": {
+          "version": 1,
+          "status": "edited",
+          "keyframes": [
+            {
+              "offset": 0,
+              "easing": "linear",
+              "transform": "translateX(-45px) scale(0.88)",
+              "opacity": 0
+            },
+            {
+              "offset": 0.6,
+              "easing": "linear",
+              "transform": "translateX(8px) scale(1.04)",
+              "opacity": 0.95
+            },
+            {
+              "offset": 1,
+              "easing": "linear",
+              "transform": "translateX(0px) scale(1)",
+              "opacity": 1
+            }
+          ],
+          "timing": {
+            "duration": 900,
+            "delay": 0,
+            "endDelay": 0,
+            "iterations": 1,
+            "iterationStart": 0,
+            "direction": "normal",
+            "easing": "ease-in-out",
+            "fill": "both"
+          },
+          "context": {
+            "transformOrigin": "125px 142.5px"
+          },
+          "originalDuration": 1600
+        },
+        "jsSHA256": "f0e29b81e3535dd65d0929a1b68c9ecdde4c91b673eadf3bcbb1534b5d44a31a",
+        "jsBytes": 20832,
+        "downloadName": "motionpaste.js"
+      }
+    },
+    {
+      "name": "Downloaded JS runs and cleans up in a separate browser without the extension",
+      "status": "PASS",
+      "details": {
+        "autoStartedAnimations": 0,
+        "first": {
+          "time": 133.3630000091512,
+          "state": "running",
+          "opacity": 0.0698132,
+          "transform": "matrix(0.891758, 0, 0, 0.891758, -41.1052, 0)"
+        },
+        "second": {
+          "time": 316.66100000915117,
+          "state": "running",
+          "opacity": 0.408768,
+          "transform": "matrix(0.948845, 0, 0, 0.948845, -22.195, 0)"
+        },
+        "conflict": "TARGET_CONFLICT",
+        "duration": 900,
+        "before": {
+          "style": "transform-origin: 7px 11px !important;",
+          "html": "Make it yours ↗",
+          "opacity": "1",
+          "transform": "none"
+        },
+        "after": {
+          "style": "transform-origin: 7px 11px !important;",
+          "html": "Make it yours ↗",
+          "opacity": "1",
+          "transform": "none"
+        },
+        "remainingAnimations": 0,
+        "core": "undefined",
+        "extensionRuntime": "undefined",
+        "separateBrowserProcess": true,
+        "loadedExtensions": 0
+      }
+    },
+    {
+      "name": "Aged capture expires with an actionable empty Studio",
+      "status": "PASS",
+      "details": {
+        "method": "Aged record timestamp by 31 minutes in isolated test profile",
+        "message": "This capture expired or was removed. Captures last 30 minutes; select the element again or import an exported recipe.",
+        "state": "WAITING",
+        "capturesRemaining": 0
+      }
+    },
+    {
+      "name": "No page errors or remote requests; final archive hash still matches",
+      "status": "PASS",
+      "details": {
+        "observedRequests": [
+          "chrome-extension://dfbaaafpkpiepbfkfjkibmaclbpmemei/studio.css",
+          "chrome-extension://dfbaaafpkpiepbfkfjkibmaclbpmemei/studio.html",
+          "chrome-extension://dfbaaafpkpiepbfkfjkibmaclbpmemei/studio.html?id=f0b9fed2-5c50-414a-a04c-5e732433151e",
+          "chrome-extension://dfbaaafpkpiepbfkfjkibmaclbpmemei/studio.js",
+          "http://127.0.0.1:56389/fixtures/consumer-app/",
+          "http://127.0.0.1:56389/fixtures/source-app/",
+          "http://127.0.0.1:56389/fixtures/source-app/source.css",
+          "http://127.0.0.1:56389/fixtures/source-app/source.js"
+        ],
+        "remoteRequests": [],
+        "finalArchiveSHA256": "84bd6e18797eb0ada095a58341590006307f332f9f14be1b63a398f2420a8e01"
+      }
+    }
+  ],
+  "pageErrors": [],
+  "limitations": [
+    "Local fixtures only; no public-site, commercial Chrome, non-Chromium, or operating-system coverage.",
+    "The beta contract is one finite CSS/WAAPI effect, fill both, rate one, explicit transform/opacity endpoints and absolute pixel 2D transforms; this smoke test exercises a WAAPI success path.",
+    "Expired capture is tested by aging the temporary profile's stored timestamp, not by waiting 30 minutes.",
+    "Static suspicious-code scans and observed network requests are bounded checks, not a security audit."
+  ],
+  "browser": "153.0.8010.12",
+  "node": "v25.9.0",
+  "platform": "darwin",
+  "playwright": "1.63.0"
+}

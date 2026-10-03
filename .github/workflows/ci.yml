@@ -1,0 +1,103 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  core:
+    name: Core checks (Node ${{ matrix.node }})
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        node: [22, 24]
+    steps:
+      - name: Check out source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - name: Install locked dependencies
+        run: npm ci
+      - name: Check formatting
+        run: npm run format:check
+      - name: Lint
+        run: npm run lint
+      - name: Check types
+        run: npm run typecheck
+      - name: Test core and worker behavior
+        run: npm test
+      - name: Test verification and packaging gates
+        run: npm run test:runner
+      - name: Test local fixture server
+        run: npm run test:server
+      - name: Build extension archive
+        run: npm run build
+
+  browser:
+    name: Chromium release verification (Node 24)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - name: Check out source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - name: Install locked dependencies
+        run: npm ci
+      - name: Install Playwright's pinned Chromium and system dependencies
+        run: npx --no-install playwright install --with-deps chromium
+      # Uses the actual extension ZIP, toolbar authorization and downloaded JS.
+      # No synthetic browser reports or CI-only product bypasses are accepted.
+      - name: Run all 15 release verification stages
+        run: npm run verify
+      - name: Resolve the verified archive path
+        id: archive
+        run: |
+          node --input-type=module <<'NODE'
+          import { appendFileSync } from "node:fs";
+          import { archivePath } from "./scripts/release-info.mjs";
+          appendFileSync(process.env.GITHUB_OUTPUT, `path=${archivePath}\n`);
+          NODE
+      - name: Preserve verification evidence, including failures
+        if: ${{ always() }}
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: chromium-verification-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            artifacts/verification/
+            coverage/coverage-summary.json
+          if-no-files-found: warn
+          retention-days: 14
+      - name: Preserve the verified extension archive
+        if: ${{ success() }}
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: verified-extension-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            ${{ steps.archive.outputs.path }}
+            ${{ steps.archive.outputs.path }}.sha256
+          if-no-files-found: error
+          retention-days: 14

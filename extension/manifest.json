@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "MotionPaste",
+  "version": "0.1.0.3",
+  "version_name": "0.1.0-beta.3",
+  "description": "Copy supported CSS and Web Animations motion into a neutral preview and export portable JavaScript.",
+  "minimum_chrome_version": "120",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "action": {
+    "default_title": "MotionPaste \u2014 copy the motion",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "worker.js",
+    "type": "module"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'none'; base-uri 'none'; connect-src 'none'"
+  }
+}

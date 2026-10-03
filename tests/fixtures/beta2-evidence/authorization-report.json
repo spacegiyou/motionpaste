@@ -1,0 +1,65 @@
+{
+  "measuredAt": "2026-10-03T05:29:51.449Z",
+  "version": "0.1.0-beta.2",
+  "scope": "Fresh Chromium profile, extracted release ZIP, actual toolbar activeTab grant, isolated content scripts with browser-generated MessageSender identities. Local fixtures only.",
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "archive member hashes and minimal permissions",
+      "status": "PASS"
+    },
+    {
+      "name": "own isolated content script cannot capture or begin before popup authorization",
+      "status": "PASS",
+      "details": {
+        "actualTopFrameIdentity": true,
+        "noAuthorizationCreated": true
+      }
+    },
+    {
+      "name": "actual picker click consumes its session; consumed token replay fails",
+      "status": "PASS",
+      "details": {
+        "storedCaptures": 1,
+        "studioReadAfterCommit": true
+      }
+    },
+    {
+      "name": "different authorized tab cannot spend another tab's token",
+      "status": "PASS"
+    },
+    {
+      "name": "same-origin navigation changes document identity and rejects the old token",
+      "status": "PASS",
+      "details": {
+        "browserDocumentIdChanged": true,
+        "priorDocumentSessionCleared": true
+      }
+    },
+    {
+      "name": "repeated invocation replaces its token; stale cleanup cannot revoke replacement",
+      "status": "PASS"
+    },
+    {
+      "name": "expired token fails closed (trusted storage timestamp fault injection)",
+      "status": "PASS",
+      "details": {
+        "actualFiveMinuteWait": false,
+        "expiredTimestampInjectedByTrustedTestContext": true
+      }
+    },
+    {
+      "name": "Escape clears authorization and session storage contains no source metadata",
+      "status": "PASS"
+    }
+  ],
+  "notRun": [
+    "Real worker suspension/restart; session persistence and single-use behavior across worker restart are exercised by tests/worker.test.ts."
+  ],
+  "archiveSHA256": "84bd6e18797eb0ada095a58341590006307f332f9f14be1b63a398f2420a8e01",
+  "manifestVersion": "0.1.0.2",
+  "manifestVersionName": "0.1.0-beta.2",
+  "browser": "153.0.8010.12",
+  "node": "v25.9.0",
+  "platform": "darwin"
+}

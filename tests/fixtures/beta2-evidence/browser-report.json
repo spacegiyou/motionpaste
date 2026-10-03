@@ -1,0 +1,61 @@
+{
+  "measuredAt": "2026-10-03T05:29:44.840Z",
+  "scope": "Fresh profile; actual release ZIP; local independent CSS/WAAPI fixtures. No public websites or cross-browser claims.",
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "archive member hashes",
+      "status": "PASS"
+    },
+    {
+      "name": "release ZIP extension permissions",
+      "status": "PASS"
+    },
+    {
+      "name": "actual action grants activeTab → picker → worker → Studio",
+      "status": "PASS"
+    },
+    {
+      "name": "Studio playback, design switch, duration edit, reset and downloads",
+      "status": "PASS"
+    },
+    {
+      "name": "Studio CSP without page errors",
+      "status": "PASS"
+    },
+    {
+      "name": "capture cancellation and unsupported animation",
+      "status": "PASS"
+    },
+    {
+      "name": "50 CSS/WAAPI parity cases × 26 sample times",
+      "status": "PASS",
+      "details": {
+        "count": 50,
+        "samples": 1300,
+        "maxError": 0
+      }
+    },
+    {
+      "name": "independent JavaScript export, target collision, cleanup, reduced motion",
+      "status": "PASS",
+      "details": {
+        "opacity": 1,
+        "conflict": "TARGET_CONFLICT",
+        "before": null,
+        "after": "",
+        "animations": 0,
+        "corePresent": "undefined"
+      }
+    }
+  ],
+  "parityCases": 50,
+  "samplePoints": 1300,
+  "maxAbsoluteError": 0,
+  "errors": [],
+  "archiveSHA256": "84bd6e18797eb0ada095a58341590006307f332f9f14be1b63a398f2420a8e01",
+  "browser": "153.0.8010.12",
+  "node": "v25.9.0",
+  "platform": "darwin",
+  "playwright": "1.63.0"
+}

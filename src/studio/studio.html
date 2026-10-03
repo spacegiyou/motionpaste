@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#101015" />
+    <title>MotionPaste — Studio</title>
+    <link rel="stylesheet" href="studio.css" />
+    <script type="module" src="studio.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#workspace">Skip to Studio</a>
+    <div class="app-shell">
+      <header class="app-header">
+        <a
+          class="brand"
+          href="studio.html"
+          aria-label="MotionPaste Studio home"
+        >
+          <span class="brand-mark" aria-hidden="true">M<span>↗</span></span>
+          <span>MotionPaste</span>
+        </a>
+        <span class="version-label">TECHNICAL PREVIEW</span>
+        <div class="privacy-label">
+          <span class="status-dot" aria-hidden="true"></span> Local by design
+          <span class="privacy-divider">/</span> No account needed
+        </div>
+      </header>
+
+      <main>
+        <section class="intro" aria-labelledby="page-title">
+          <div>
+            <p class="eyebrow">A CLIPBOARD FOR WEB MOTION</p>
+            <h1 id="page-title">
+              Copy the motion.<br /><span>Keep your design.</span>
+            </h1>
+          </div>
+          <div class="intro-note">
+            <p>A little movement. A whole new feel.</p>
+            <p>
+              Capture a supported animation, try it on your UI,<br
+                class="desktop-break"
+              />
+              and take the browser-native code with you.
+            </p>
+          </div>
+        </section>
+
+        <div class="support-boundary" id="support-boundary">
+          <strong>Capture checks the source. Apply checks your target.</strong>
+          <p>
+            A successful capture does not guarantee playback on another page.
+            Both pages need readable stylesheets and no conflicting
+            <code>!important</code> rules. One finite animation, 2D transform
+            and opacity only; multiple effects and 3D motion are unsupported.
+          </p>
+          <details>
+            <summary>Try a supported local example</summary>
+            <p>
+              In the source package, run <code>npm ci</code>,
+              <code>npm run build</code>, then <code>npm run dev</code>. Open
+              the included source app at
+              <code>http://127.0.0.1:4173/fixtures/source-app/</code>
+              and capture its animated card. Diagnostics stay local; no source
+              URL or page text is sent elsewhere.
+            </p>
+          </details>
+        </div>
+
+        <div id="error-message" class="error-message" role="alert" hidden></div>
+        <div id="reduced-motion-notice" class="motion-notice" hidden>
+          <span
+            ><strong>APPLY paused [REDUCED_MOTION].</strong> Your reduced-motion
+            preference blocks automatic playback. You can approve one
+            preview.</span
+          >
+          <button id="play-once" class="text-button" type="button" disabled>
+            Play once anyway <span aria-hidden="true">↗</span>
+          </button>
+        </div>
+
+        <section
+          id="workspace"
+          class="workspace"
+          aria-label="Motion editor"
+          tabindex="-1"
+        >
+          <aside class="controls">
+            <div class="control-section">
+              <h2 class="section-label"><span>01</span> THE MOTION</h2>
+              <div class="recipe-name">
+                <span id="recipe-label">Your next great motion</span
+                ><span id="recipe-state" class="badge">WAITING</span>
+              </div>
+              <p id="capture-hint" class="control-note">
+                Open your own web app, click the extension, then choose an
+                animated element.
+              </p>
+              <button
+                id="import-button"
+                class="button secondary import-button"
+                type="button"
+              >
+                <span aria-hidden="true">↥</span> Import recipe JSON
+              </button>
+              <input
+                id="import-file"
+                type="file"
+                accept="application/json,.json"
+                hidden
+              />
+              <p class="tiny-note">
+                Your recipe stays in this browser.<br />No page content or
+                styles are copied.
+              </p>
+            </div>
+
+            <div class="control-section remix-section">
+              <h2 class="section-label"><span>02</span> MAKE IT YOURS</h2>
+              <label class="field-label" for="duration-input"
+                >Duration <span class="unit">milliseconds</span></label
+              >
+              <div class="duration-field">
+                <input
+                  id="duration-input"
+                  type="number"
+                  min="1"
+                  max="60000"
+                  step="1"
+                  value="1000"
+                  disabled
+                /><span>ms</span>
+              </div>
+              <input
+                id="duration-slider"
+                class="duration-slider"
+                type="range"
+                aria-label="Animation duration"
+                min="1"
+                max="60000"
+                step="1"
+                value="1000"
+                disabled
+              />
+              <div class="range-labels">
+                <span id="duration-min">1 ms</span
+                ><span id="duration-max">60,000 ms</span>
+              </div>
+              <button
+                id="restore-duration"
+                class="text-button restore-duration"
+                type="button"
+                disabled
+              >
+                Restore loaded duration
+              </button>
+              <button
+                id="compare-original"
+                class="button secondary"
+                type="button"
+                aria-pressed="false"
+                disabled
+              >
+                Compare original timing
+              </button>
+              <button
+                id="play-button"
+                class="button primary"
+                type="button"
+                disabled
+              >
+                <span id="play-icon" aria-hidden="true">▶</span>
+                <span id="play-label">Play motion</span>
+              </button>
+              <div class="playback-secondary">
+                <button
+                  id="restart-button"
+                  class="button secondary"
+                  type="button"
+                  disabled
+                >
+                  <span aria-hidden="true">↻</span> Restart
+                </button>
+                <button
+                  id="reset-button"
+                  class="button secondary"
+                  type="button"
+                  disabled
+                >
+                  Reset
+                </button>
+              </div>
+            </div>
+            <div class="supported-note">
+              <span class="scope-icon" aria-hidden="true">⌁</span>
+              <p>
+                One element.<br />Transform + opacity.<br />A deliberate, useful
+                subset.
+              </p>
+            </div>
+          </aside>
+
+          <div class="editor">
+            <div class="editor-toolbar">
+              <span class="section-label"
+                >THE SAME MOTION. YOUR EXPRESSION.</span
+              ><span id="loaded-indicator" class="loaded-indicator"
+                ><span aria-hidden="true"></span> Awaiting a recipe</span
+              >
+            </div>
+            <div class="preview-grid">
+              <section class="preview-panel" aria-labelledby="source-heading">
+                <div class="panel-heading">
+                  <h3 id="source-heading">Motion specimen</h3>
+                  <span>NEUTRAL PREVIEW</span>
+                </div>
+                <div class="preview-stage source-stage">
+                  <div
+                    id="source-target"
+                    class="source-target"
+                    aria-label="Neutral motion preview"
+                  >
+                    <span class="specimen-cross" aria-hidden="true">+</span
+                    ><span class="specimen-label">motion</span>
+                  </div>
+                </div>
+                <p id="source-preview-caption" class="panel-caption">
+                  Only the movement comes along.
+                </p>
+              </section>
+              <div class="transfer-arrow" aria-hidden="true">↗</div>
+              <section
+                class="preview-panel target-panel"
+                aria-labelledby="target-heading"
+              >
+                <div class="panel-heading">
+                  <h3 id="target-heading">Your canvas</h3>
+                  <span>NEW DESIGN</span>
+                </div>
+                <div class="preview-stage target-stage">
+                  <div id="preview-target" class="preview-target design-button">
+                    <span class="target-label">Make it yours</span
+                    ><span class="target-arrow" aria-hidden="true">↗</span>
+                  </div>
+                </div>
+                <div
+                  class="design-options"
+                  role="group"
+                  aria-label="Preview design"
+                >
+                  <button
+                    type="button"
+                    data-design="button"
+                    aria-pressed="true"
+                    disabled
+                  >
+                    Button
+                  </button>
+                  <button
+                    type="button"
+                    data-design="card"
+                    aria-pressed="false"
+                    disabled
+                  >
+                    Card
+                  </button>
+                  <button
+                    type="button"
+                    data-design="pill"
+                    aria-pressed="false"
+                    disabled
+                  >
+                    Pill
+                  </button>
+                </div>
+              </section>
+            </div>
+
+            <div id="empty-state" class="empty-state">
+              <span class="empty-icon" aria-hidden="true">⌘</span>
+              <div>
+                <strong>Every great remix starts somewhere.</strong>
+                <p>
+                  Capture a motion with the extension, or import a MotionPaste
+                  JSON recipe to begin.
+                </p>
+              </div>
+            </div>
+            <section
+              class="timeline-section"
+              aria-labelledby="timeline-heading"
+            >
+              <div class="timeline-heading">
+                <h3 id="timeline-heading" class="section-label">
+                  MOTION RECIPE
+                </h3>
+                <span id="recipe-summary">No frames loaded</span>
+              </div>
+              <div id="timeline" class="timeline" aria-label="Keyframe offsets">
+                <div class="timeline-track"></div>
+                <div id="playhead" class="playhead" hidden></div>
+                <div id="keyframe-markers"></div>
+              </div>
+              <div class="timeline-scale">
+                <span>0%</span><span>25%</span><span>50%</span><span>75%</span
+                ><span>100%</span>
+              </div>
+            </section>
+            <div class="context-note">
+              <span aria-hidden="true">↳</span>
+              <p id="geometry-note">
+                A motion recipe carries keyframes and timing. Your markup,
+                colors, and layout stay yours.
+              </p>
+            </div>
+            <details id="recipe-details" class="recipe-details">
+              <summary>
+                Inspect captured values <span aria-hidden="true">+</span>
+              </summary>
+              <div id="timing-details" class="timing-details">
+                Load a recipe to inspect its timing and keyframes.
+              </div>
+              <div class="table-scroll">
+                <table id="keyframe-table" hidden>
+                  <caption class="sr-only">
+                    Captured keyframe properties
+                  </caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">Offset</th>
+                      <th scope="col">Transform</th>
+                      <th scope="col">Opacity</th>
+                      <th scope="col">Easing</th>
+                    </tr>
+                  </thead>
+                  <tbody id="keyframe-rows"></tbody>
+                </table>
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <section class="export-section" aria-labelledby="export-heading">
+          <div class="export-heading">
+            <div>
+              <h2 id="export-heading" class="section-label">
+                <span>03</span> TAKE IT WITH YOU
+              </h2>
+              <p>Browser-native JavaScript. Ready for your own element.</p>
+            </div>
+            <div class="export-actions">
+              <button
+                id="export-json"
+                class="button secondary small"
+                type="button"
+                disabled
+              >
+                Recipe JSON <span aria-hidden="true">↓</span></button
+              ><button
+                id="download-js"
+                class="button secondary small"
+                type="button"
+                disabled
+              >
+                JavaScript <span aria-hidden="true">↓</span></button
+              ><button
+                id="copy-js"
+                class="button secondary small copy-button"
+                type="button"
+                disabled
+              >
+                Copy code <span aria-hidden="true">⧉</span>
+              </button>
+            </div>
+          </div>
+          <div class="code-window">
+            <div class="code-gutter" aria-hidden="true">
+              01<br />02<br />03<br />04
+            </div>
+            <pre><code id="code-output">// Your next motion starts here.
+// Capture or import a recipe to generate runnable JavaScript.
+// Then call window.motionPaste(element) in your own page.</code></pre>
+            <span class="code-language">JAVASCRIPT</span>
+          </div>
+          <p class="export-footnote">
+            Self-contained JavaScript. No extension or external library
+            required. Validation, playback, and cleanup code are included in the
+            file.
+          </p>
+        </section>
+      </main>
+      <footer class="app-footer">
+        <span>Made for small details that make a difference.</span
+        ><span
+          >CHROME FIRST <span aria-hidden="true">·</span> LOCAL ONLY
+          <span aria-hidden="true">·</span> TECHNICAL PREVIEW</span
+        >
+      </footer>
+      <div
+        id="status-message"
+        class="status-message"
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+      >
+        Ready to capture a little movement.
+      </div>
+    </div>
+  </body>
+</html>

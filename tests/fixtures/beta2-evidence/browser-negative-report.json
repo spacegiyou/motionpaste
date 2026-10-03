@@ -1,0 +1,787 @@
+{
+  "measuredAt": "2026-10-03T05:29:55.427Z",
+  "scope": "Independent actual Chromium guard tests against the current compiled core. Each case uses a fresh browser context. CSS cross-origin responses are local Playwright route fixtures; no remote content is fetched. This is not an extension or public-site test.",
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "transition",
+      "status": "PASS",
+      "expectedCode": "TRANSITION",
+      "actualCode": "TRANSITION",
+      "phase": "capture",
+      "sourceUnchanged": true,
+      "targetRestored": true
+    },
+    {
+      "name": "infinite-iterations",
+      "status": "PASS",
+      "expectedCode": "NUMBER",
+      "actualCode": "NUMBER",
+      "phase": "capture",
+      "sourceUnchanged": true,
+      "targetRestored": true
+    },
+    {
+      "name": "playback-rate",
+      "status": "PASS",
+      "expectedCode": "PLAYBACK_RATE",
+      "actualCode": "PLAYBACK_RATE",
+      "phase": "capture",
+      "sourceUnchanged": true,
+      "targetRestored": true
+    },
+    {
+      "name": "fill-none",
+      "status": "PASS",
+      "expectedCode": "FILL_UNSUPPORTED",
+      "actualCode": "FILL_UNSUPPORTED",
+      "phase": "capture",
+      "sourceUnchanged": true,
+      "targetRestored": true
+    },
+    {
+      "name": "color",
+      "status": "PASS",
+      "expectedCode": "UNSUPPORTED_PROPERTY",
+      "actualCode": "UNSUPPORTED_PROPERTY",
+      "phase": "capture",
+      "sourceUnchanged": true,
+      "targetRestored": true
+    },
+    {
+      "name": "multiple",
+      "status": "PASS",
+      "expectedCode": "MULTIPLE_ANIMATIONS",
+      "actualCode": "MULTIPLE_ANIMATIONS",
+      "phase": "capture",
+      "sourceUnchanged": true,
+      "targetRestored": true
+    },
+    {
+      "name": "additive",
+      "status": "PASS",
+      "expectedCode": "COMPOSITE",
+      "actualCode": "COMPOSITE",
+      "phase": "capture",
+      "sourceUnchanged": true,
+      "targetRestored": true
+    },
+    {
+      "name": "frame-additive",
+      "status": "PASS",
+      "expectedCode": "COMPOSITE",
+      "actualCode": "COMPOSITE",
+      "phase": "capture",
+      "sourceUnchanged": true,
+      "targetRestored": true
+    },
+    {
+      "name": "percentage",
+      "status": "PASS",
+      "expectedCode": "TRANSFORM",
+      "actualCode": "TRANSFORM",
+      "phase": "capture",
+      "sourceUnchanged": true,
+      "targetRestored": true
+    },
+    {
+      "name": "3d",
+      "status": "PASS",
+      "expectedCode": "TRANSFORM",
+      "actualCode": "TRANSFORM",
+      "phase": "capture",
+      "sourceUnchanged": true,
+      "targetRestored": true
+    },
+    {
+      "name": "implicit-transform-start",
+      "status": "PASS",
+      "expectedCode": "ENDPOINTS",
+      "actualCode": "ENDPOINTS",
+      "phase": "capture",
+      "sourceUnchanged": true,
+      "targetRestored": true
+    },
+    {
+      "name": "implicit-opacity-end",
+      "status": "PASS",
+      "expectedCode": "ENDPOINTS",
+      "actualCode": "ENDPOINTS",
+      "phase": "capture",
+      "sourceUnchanged": true,
+      "targetRestored": true
+    },
+    {
+      "name": "source-inline-transform-important",
+      "status": "PASS",
+      "expectedCode": "IMPORTANT_STYLE",
+      "actualCode": "IMPORTANT_STYLE",
+      "phase": "capture",
+      "sourceUnchanged": true,
+      "targetRestored": true
+    },
+    {
+      "name": "source-inline-opacity-important",
+      "status": "PASS",
+      "expectedCode": "IMPORTANT_STYLE",
+      "actualCode": "IMPORTANT_STYLE",
+      "phase": "capture",
+      "sourceUnchanged": true,
+      "targetRestored": true
+    },
+    {
+      "name": "source-stylesheet-transform-important",
+      "status": "PASS",
+      "expectedCode": "IMPORTANT_STYLE",
+      "actualCode": "IMPORTANT_STYLE",
+      "phase": "capture",
+      "sourceUnchanged": true,
+      "targetRestored": true
+    },
+    {
+      "name": "source-stylesheet-opacity-important",
+      "status": "PASS",
+      "expectedCode": "IMPORTANT_STYLE",
+      "actualCode": "IMPORTANT_STYLE",
+      "phase": "capture",
+      "sourceUnchanged": true,
+      "targetRestored": true
+    },
+    {
+      "name": "target-inline-transform-important",
+      "status": "PASS",
+      "expectedCode": "IMPORTANT_STYLE",
+      "actualCode": "IMPORTANT_STYLE",
+      "phase": "replay",
+      "sourceUnchanged": true,
+      "targetRestored": true
+    },
+    {
+      "name": "target-inline-opacity-important",
+      "status": "PASS",
+      "expectedCode": "IMPORTANT_STYLE",
+      "actualCode": "IMPORTANT_STYLE",
+      "phase": "replay",
+      "sourceUnchanged": true,
+      "targetRestored": true
+    },
+    {
+      "name": "target-stylesheet-transform-important",
+      "status": "PASS",
+      "expectedCode": "IMPORTANT_STYLE",
+      "actualCode": "IMPORTANT_STYLE",
+      "phase": "replay",
+      "sourceUnchanged": true,
+      "targetRestored": true
+    },
+    {
+      "name": "target-stylesheet-opacity-important",
+      "status": "PASS",
+      "expectedCode": "IMPORTANT_STYLE",
+      "actualCode": "IMPORTANT_STYLE",
+      "phase": "replay",
+      "sourceUnchanged": true,
+      "targetRestored": true
+    },
+    {
+      "name": "source-scoped-opacity-important",
+      "status": "PASS",
+      "expectedCode": "IMPORTANT_STYLE",
+      "actualCode": "IMPORTANT_STYLE",
+      "phase": "capture",
+      "sourceUnchanged": true,
+      "targetRestored": true
+    },
+    {
+      "name": "target-scoped-opacity-important",
+      "status": "PASS",
+      "expectedCode": "IMPORTANT_STYLE",
+      "actualCode": "IMPORTANT_STYLE",
+      "phase": "replay",
+      "sourceUnchanged": true,
+      "targetRestored": true
+    },
+    {
+      "name": "source-scoped-nested-transform-important",
+      "status": "PASS",
+      "expectedCode": "IMPORTANT_STYLE",
+      "actualCode": "IMPORTANT_STYLE",
+      "phase": "capture",
+      "sourceUnchanged": true,
+      "targetRestored": true
+    },
+    {
+      "name": "target-scoped-nested-transform-important",
+      "status": "PASS",
+      "expectedCode": "IMPORTANT_STYLE",
+      "actualCode": "IMPORTANT_STYLE",
+      "phase": "replay",
+      "sourceUnchanged": true,
+      "targetRestored": true
+    },
+    {
+      "name": "source-unreadable-stylesheet",
+      "status": "PASS",
+      "expectedCode": "STYLESHEET_ACCESS",
+      "actualCode": "STYLESHEET_ACCESS",
+      "phase": "capture",
+      "sourceUnchanged": true,
+      "targetRestored": true,
+      "unreadableConfirmed": true,
+      "fixtureRequests": [
+        "http://motionpaste-fixture.test/",
+        "http://motionpaste-css.test/unreadable.css"
+      ]
+    },
+    {
+      "name": "target-unreadable-stylesheet",
+      "status": "PASS",
+      "expectedCode": "STYLESHEET_ACCESS",
+      "actualCode": "STYLESHEET_ACCESS",
+      "phase": "replay",
+      "sourceUnchanged": true,
+      "targetRestored": true,
+      "unreadableConfirmed": true,
+      "fixtureRequests": [
+        "http://motionpaste-fixture.test/",
+        "http://motionpaste-css.test/unreadable.css"
+      ]
+    },
+    {
+      "name": "shadow-ancestor",
+      "status": "PASS",
+      "expectedCode": "CONTEXT",
+      "actualCode": "CONTEXT",
+      "phase": "capture",
+      "sourceUnchanged": true,
+      "targetRestored": true
+    },
+    {
+      "name": "ancestor-perspective",
+      "status": "PASS",
+      "expectedCode": "CONTEXT",
+      "actualCode": "CONTEXT",
+      "phase": "capture",
+      "sourceUnchanged": true,
+      "targetRestored": true
+    },
+    {
+      "name": "target-conflict",
+      "status": "PASS",
+      "expectedCode": "TARGET_CONFLICT",
+      "actualCode": "TARGET_CONFLICT",
+      "phase": "replay",
+      "sourceUnchanged": true,
+      "targetRestored": true
+    },
+    {
+      "name": "reduced-motion",
+      "status": "PASS",
+      "expectedCode": "REDUCED_MOTION",
+      "actualCode": "REDUCED_MOTION",
+      "phase": "replay",
+      "sourceUnchanged": true,
+      "targetRestored": true
+    },
+    {
+      "name": "cleanup-inline-origin",
+      "status": "PASS",
+      "expectedCode": null,
+      "actualCode": null,
+      "phase": "replay",
+      "sourceUnchanged": true,
+      "targetRestored": true,
+      "midpoint": {
+        "source": {
+          "opacity": "0.4664",
+          "transform": "matrix(1, 0, 0, 1, 26.64, 0)"
+        },
+        "target": {
+          "opacity": "0.4664",
+          "transform": "matrix(1, 0, 0, 1, 26.64, 0)"
+        }
+      }
+    },
+    {
+      "name": "cleanup-no-origin",
+      "status": "PASS",
+      "expectedCode": null,
+      "actualCode": null,
+      "phase": "replay",
+      "sourceUnchanged": true,
+      "targetRestored": true,
+      "midpoint": {
+        "source": {
+          "opacity": "0.4664",
+          "transform": "matrix(1, 0, 0, 1, 26.64, 0)"
+        },
+        "target": {
+          "opacity": "0.4664",
+          "transform": "matrix(1, 0, 0, 1, 26.64, 0)"
+        }
+      }
+    },
+    {
+      "name": "source-unchanged",
+      "status": "PASS",
+      "expectedCode": null,
+      "actualCode": null,
+      "phase": "replay",
+      "sourceUnchanged": true,
+      "targetRestored": true,
+      "midpoint": {
+        "source": {
+          "opacity": "0.4664",
+          "transform": "matrix(1, 0, 0, 1, 26.64, 0)"
+        },
+        "target": {
+          "opacity": "0.4664",
+          "transform": "matrix(1, 0, 0, 1, 26.64, 0)"
+        }
+      }
+    },
+    {
+      "name": "internal/invalid-css-numbers",
+      "status": "PASS",
+      "checks": [
+        {
+          "property": "transform",
+          "value": "translateX(1.px)",
+          "browserSupports": false,
+          "code": "TRANSFORM"
+        },
+        {
+          "property": "transform",
+          "value": "rotate(1.deg)",
+          "browserSupports": false,
+          "code": "TRANSFORM"
+        },
+        {
+          "property": "transform",
+          "value": "scale(1.)",
+          "browserSupports": false,
+          "code": "TRANSFORM"
+        },
+        {
+          "property": "transform",
+          "value": "matrix(1., 0, 0, 1, 0, 0)",
+          "browserSupports": false,
+          "code": "TRANSFORM"
+        },
+        {
+          "property": "animation-timing-function",
+          "value": "cubic-bezier(0., 0, 1, 1)",
+          "browserSupports": false,
+          "code": "EASING"
+        },
+        {
+          "property": "transform-origin",
+          "value": "1.px 2px",
+          "browserSupports": false,
+          "code": "CONTEXT"
+        }
+      ],
+      "targetUnchanged": true
+    },
+    {
+      "name": "internal/opacity-only-rotated-target",
+      "status": "PASS",
+      "before": {
+        "x": -20.660253524780273,
+        "y": 5.679491996765137,
+        "width": 126.6025390625,
+        "height": 119.28203582763672
+      },
+      "during": {
+        "x": -20.660253524780273,
+        "y": 5.679491996765137,
+        "width": 126.6025390625,
+        "height": 119.28203582763672
+      },
+      "opacity": 0.62782,
+      "inlineStyleMutations": 0,
+      "origin": {
+        "value": "10px 20px",
+        "priority": "important"
+      }
+    },
+    {
+      "name": "internal/opacity-only-origin-transition",
+      "status": "PASS",
+      "before": {
+        "x": -20.660253524780273,
+        "y": 5.679491996765137,
+        "width": 126.6025390625,
+        "height": 119.28203582763672
+      },
+      "during": {
+        "x": -20.660253524780273,
+        "y": 5.679491996765137,
+        "width": 126.6025390625,
+        "height": 119.28203582763672
+      },
+      "opacity": 0.62782,
+      "inlineStyleMutations": 0,
+      "origin": {
+        "value": "10px 20px",
+        "priority": "important"
+      }
+    },
+    {
+      "name": "internal/cleanup-external-origin-value",
+      "status": "PASS",
+      "preservedActiveEdit": {
+        "value": "3px 4px",
+        "priority": ""
+      },
+      "preservedLaterEdit": {
+        "value": "7px 8px",
+        "priority": ""
+      }
+    },
+    {
+      "name": "internal/cleanup-external-origin-priority",
+      "status": "PASS",
+      "preservedActiveEdit": {
+        "value": "70px 60px",
+        "priority": ""
+      },
+      "preservedLaterEdit": {
+        "value": "7px 8px",
+        "priority": ""
+      }
+    },
+    {
+      "name": "internal/cleanup-external-origin-removal",
+      "status": "PASS",
+      "preservedActiveEdit": {
+        "value": "",
+        "priority": ""
+      },
+      "preservedLaterEdit": {
+        "value": "7px 8px",
+        "priority": ""
+      }
+    },
+    {
+      "name": "internal/queued-cancel-new-handle",
+      "status": "PASS",
+      "cancelEventObserved": true,
+      "separateExportRuntime": false,
+      "during": {
+        "value": "70px 60px",
+        "priority": "important"
+      },
+      "restored": {
+        "value": "10px 20px",
+        "priority": "important"
+      }
+    },
+    {
+      "name": "internal/queued-cancel-new-export",
+      "status": "PASS",
+      "cancelEventObserved": true,
+      "separateExportRuntime": true,
+      "during": {
+        "value": "70px 60px",
+        "priority": "important"
+      },
+      "restored": {
+        "value": "10px 20px",
+        "priority": "important"
+      }
+    },
+    {
+      "name": "internal/failed-animate-owned-origin",
+      "status": "PASS",
+      "code": "PLAYBACK",
+      "animateCalls": 1,
+      "restoredOrPreserved": {
+        "value": "10px 20px",
+        "priority": "important"
+      }
+    },
+    {
+      "name": "internal/failed-animate-external-origin",
+      "status": "PASS",
+      "code": "PLAYBACK",
+      "animateCalls": 1,
+      "restoredOrPreserved": {
+        "value": "7px 8px",
+        "priority": ""
+      }
+    },
+    {
+      "name": "internal/browser-transform-preflight",
+      "status": "PASS",
+      "code": "TRANSFORM",
+      "animateCalls": 0,
+      "restoredOrPreserved": {
+        "value": "10px 20px",
+        "priority": "important"
+      },
+      "capabilityProbe": {
+        "property": "transform",
+        "value": "translateX(80px)",
+        "actualBrowserSupport": true,
+        "simulatedRejection": true
+      }
+    },
+    {
+      "name": "internal/browser-frame-easing-preflight",
+      "status": "PASS",
+      "code": "EASING",
+      "animateCalls": 0,
+      "restoredOrPreserved": {
+        "value": "10px 20px",
+        "priority": "important"
+      },
+      "capabilityProbe": {
+        "property": "animation-timing-function",
+        "value": "ease-in",
+        "actualBrowserSupport": true,
+        "simulatedRejection": true
+      }
+    },
+    {
+      "name": "internal/browser-timing-easing-preflight",
+      "status": "PASS",
+      "code": "EASING",
+      "animateCalls": 0,
+      "restoredOrPreserved": {
+        "value": "10px 20px",
+        "priority": "important"
+      },
+      "capabilityProbe": {
+        "property": "animation-timing-function",
+        "value": "ease-out",
+        "actualBrowserSupport": true,
+        "simulatedRejection": true
+      }
+    },
+    {
+      "name": "exported/invalid-css-numbers",
+      "status": "PASS",
+      "checks": [
+        {
+          "property": "transform",
+          "value": "translateX(1.px)",
+          "browserSupports": false,
+          "code": "TRANSFORM"
+        },
+        {
+          "property": "transform",
+          "value": "rotate(1.deg)",
+          "browserSupports": false,
+          "code": "TRANSFORM"
+        },
+        {
+          "property": "transform",
+          "value": "scale(1.)",
+          "browserSupports": false,
+          "code": "TRANSFORM"
+        },
+        {
+          "property": "transform",
+          "value": "matrix(1., 0, 0, 1, 0, 0)",
+          "browserSupports": false,
+          "code": "TRANSFORM"
+        },
+        {
+          "property": "animation-timing-function",
+          "value": "cubic-bezier(0., 0, 1, 1)",
+          "browserSupports": false,
+          "code": "EASING"
+        },
+        {
+          "property": "transform-origin",
+          "value": "1.px 2px",
+          "browserSupports": false,
+          "code": "CONTEXT"
+        }
+      ],
+      "targetUnchanged": true
+    },
+    {
+      "name": "exported/opacity-only-rotated-target",
+      "status": "PASS",
+      "before": {
+        "x": -20.660253524780273,
+        "y": 5.679491996765137,
+        "width": 126.6025390625,
+        "height": 119.28203582763672
+      },
+      "during": {
+        "x": -20.660253524780273,
+        "y": 5.679491996765137,
+        "width": 126.6025390625,
+        "height": 119.28203582763672
+      },
+      "opacity": 0.62782,
+      "inlineStyleMutations": 0,
+      "origin": {
+        "value": "10px 20px",
+        "priority": "important"
+      }
+    },
+    {
+      "name": "exported/opacity-only-origin-transition",
+      "status": "PASS",
+      "before": {
+        "x": -20.660253524780273,
+        "y": 5.679491996765137,
+        "width": 126.6025390625,
+        "height": 119.28203582763672
+      },
+      "during": {
+        "x": -20.660253524780273,
+        "y": 5.679491996765137,
+        "width": 126.6025390625,
+        "height": 119.28203582763672
+      },
+      "opacity": 0.62782,
+      "inlineStyleMutations": 0,
+      "origin": {
+        "value": "10px 20px",
+        "priority": "important"
+      }
+    },
+    {
+      "name": "exported/cleanup-external-origin-value",
+      "status": "PASS",
+      "preservedActiveEdit": {
+        "value": "3px 4px",
+        "priority": ""
+      },
+      "preservedLaterEdit": {
+        "value": "7px 8px",
+        "priority": ""
+      }
+    },
+    {
+      "name": "exported/cleanup-external-origin-priority",
+      "status": "PASS",
+      "preservedActiveEdit": {
+        "value": "70px 60px",
+        "priority": ""
+      },
+      "preservedLaterEdit": {
+        "value": "7px 8px",
+        "priority": ""
+      }
+    },
+    {
+      "name": "exported/cleanup-external-origin-removal",
+      "status": "PASS",
+      "preservedActiveEdit": {
+        "value": "",
+        "priority": ""
+      },
+      "preservedLaterEdit": {
+        "value": "7px 8px",
+        "priority": ""
+      }
+    },
+    {
+      "name": "exported/queued-cancel-new-handle",
+      "status": "PASS",
+      "cancelEventObserved": true,
+      "separateExportRuntime": false,
+      "during": {
+        "value": "70px 60px",
+        "priority": "important"
+      },
+      "restored": {
+        "value": "10px 20px",
+        "priority": "important"
+      }
+    },
+    {
+      "name": "exported/queued-cancel-new-export",
+      "status": "PASS",
+      "cancelEventObserved": true,
+      "separateExportRuntime": true,
+      "during": {
+        "value": "70px 60px",
+        "priority": "important"
+      },
+      "restored": {
+        "value": "10px 20px",
+        "priority": "important"
+      }
+    },
+    {
+      "name": "exported/failed-animate-owned-origin",
+      "status": "PASS",
+      "code": "PLAYBACK",
+      "animateCalls": 1,
+      "restoredOrPreserved": {
+        "value": "10px 20px",
+        "priority": "important"
+      }
+    },
+    {
+      "name": "exported/failed-animate-external-origin",
+      "status": "PASS",
+      "code": "PLAYBACK",
+      "animateCalls": 1,
+      "restoredOrPreserved": {
+        "value": "7px 8px",
+        "priority": ""
+      }
+    },
+    {
+      "name": "exported/browser-transform-preflight",
+      "status": "PASS",
+      "code": "TRANSFORM",
+      "animateCalls": 0,
+      "restoredOrPreserved": {
+        "value": "10px 20px",
+        "priority": "important"
+      },
+      "capabilityProbe": {
+        "property": "transform",
+        "value": "translateX(80px)",
+        "actualBrowserSupport": true,
+        "simulatedRejection": true
+      }
+    },
+    {
+      "name": "exported/browser-frame-easing-preflight",
+      "status": "PASS",
+      "code": "EASING",
+      "animateCalls": 0,
+      "restoredOrPreserved": {
+        "value": "10px 20px",
+        "priority": "important"
+      },
+      "capabilityProbe": {
+        "property": "animation-timing-function",
+        "value": "ease-in",
+        "actualBrowserSupport": true,
+        "simulatedRejection": true
+      }
+    },
+    {
+      "name": "exported/browser-timing-easing-preflight",
+      "status": "PASS",
+      "code": "EASING",
+      "animateCalls": 0,
+      "restoredOrPreserved": {
+        "value": "10px 20px",
+        "priority": "important"
+      },
+      "capabilityProbe": {
+        "property": "animation-timing-function",
+        "value": "ease-out",
+        "actualBrowserSupport": true,
+        "simulatedRejection": true
+      }
+    }
+  ],
+  "errors": [],
+  "browser": "153.0.8010.12",
+  "node": "v25.9.0",
+  "platform": "darwin",
+  "playwright": "1.63.0"
+}

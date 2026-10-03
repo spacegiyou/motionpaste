@@ -1,0 +1,28 @@
+name: Bug report
+description: Report a reproducible capture, playback, export, or installation problem.
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: "For vulnerabilities, use the private reporting link below. Please share only examples you have permission to publish; omit private page data and credentials."
+  - type: input
+    id: environment
+    attributes:
+      label: Version and environment
+      placeholder: "MotionPaste beta.3, Chromium version, operating system"
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps and minimal example
+      description: Include a small HTML/CSS/JS example or a public reproduction if possible.
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Expected and actual result
+      description: Include the CAPTURE/APPLY error code when one is shown.
+    validations:
+      required: true

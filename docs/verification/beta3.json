@@ -1,0 +1,186 @@
+{
+  "status": "PASS",
+  "productVerdict": "PASS",
+  "scope": "Automated local supported-scope release checks; not public release or universal compatibility.",
+  "startedAt": "2026-10-03T13:28:37.394Z",
+  "version": "0.1.0-beta.3",
+  "evidenceSchema": "motionpaste-evidence-v1",
+  "stages": [
+    {
+      "name": "format",
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 704
+    },
+    {
+      "name": "lint",
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 1363
+    },
+    {
+      "name": "typecheck",
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 1233
+    },
+    {
+      "name": "unit",
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 1530
+    },
+    {
+      "name": "verification-runner",
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 914
+    },
+    {
+      "name": "server",
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 273
+    },
+    {
+      "name": "coverage",
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 1079
+    },
+    {
+      "name": "build",
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 209
+    },
+    {
+      "name": "extension-e2e",
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 7087
+    },
+    {
+      "name": "authorization",
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 6008
+    },
+    {
+      "name": "worker-lifecycle",
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 5222
+    },
+    {
+      "name": "browser-guards",
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 8706
+    },
+    {
+      "name": "archive-smoke",
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 4582
+    },
+    {
+      "name": "studio-regressions",
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 4018
+    },
+    {
+      "name": "downloaded-export-parity",
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 9723
+    }
+  ],
+  "finishedAt": "2026-10-03T13:29:30.056Z",
+  "summary": {
+    "pipelineStages": 15,
+    "extensionChecks": 8,
+    "cssWaapiCases": 50,
+    "cssWaapiTimepoints": 1300,
+    "authorizationChecks": 8,
+    "workerLifecycleChecks": 7,
+    "forcedWorkerRestarts": 6,
+    "browserGuardChecks": 59,
+    "archiveChecks": 8,
+    "studioChecks": 13,
+    "exportFixtures": 18,
+    "exportTimepoints": 916,
+    "detectedNoOpControls": 18
+  },
+  "archiveSHA256": "a6199094ad51bbaa709586f2ba058e600582bec262cc4542e8cc859234e1c85d",
+  "codeHashes": {
+    ".prettierignore": "35c5ac4461a42e14ebb44ecb20d3908362e40514c9982bb8206afa80c41bff92",
+    "eslint.config.mjs": "3dc71f7c7e415c9208d51ca8a441a4180407ec3730db91060ba84e79a3412395",
+    "extension/manifest.json": "ed3e9fc733e51220da8adbe6b06fb81948513910c3a5835b2e2a49367fe63685",
+    "fixtures/consumer-app/index.html": "3ccdae6e688dbb5ddb8129ab3a6ec8d79a053e4af3f9738f8266613a400d4883",
+    "fixtures/consumer-app/showcase.html": "975197c32c1911575a27b77ac883589a838775d17a87d8203951f074dc03c1a0",
+    "fixtures/source-app/index.html": "f1a6723aed36b121a6d6a873bb02097d60a557ac64399de1d87b0784f680cece",
+    "fixtures/source-app/source.css": "66ff411c74f2127a9cc5289d1cdca868465e117c6eef5c2800e5166989a6a688",
+    "fixtures/source-app/source.js": "f7627951cbb275cb09a787306e953849261b1a84150a86506fceec5d67df5a3a",
+    "package-lock.json": "e6ae638c11687b9efdf09dbb164418424f0f829c802482f2ed971ef402e77eed",
+    "package.json": "3e937169d0ff1cc7cb9a70d4704e27ab319b100fd0cdf0c5bf209b9d0d846d85",
+    "scripts/archive-smoke.mjs": "b1179b1d90058756050e72e4a510059ca8c7f5226db6aefadb3be1f7cfc666e4",
+    "scripts/authorization-test.mjs": "436e080f6868ee91f176e4061313d4fcd1f4dab6835e31edf81d55f3a6d0d7be",
+    "scripts/browser-helpers.mjs": "4d6a8ef8c537f946970129aeacfce303ddb214742959611311bff54a28991460",
+    "scripts/browser-negative.mjs": "9200e083696a2966eb7ff08a7823962f730c9efaa650f8ad295b582ead98f07f",
+    "scripts/browser-test.mjs": "969d0ef2c77bdd63142ce692492ac9bc047c541cb702f47ffc85a8e5c376a2ec",
+    "scripts/build.mjs": "720263d7da9458332991737da861c4a57df4df1de43ee4f017a4c84f997b67d4",
+    "scripts/evidence-content-guard.mjs": "553d762149b8408ee9dee8bc240b121e0c25bce90c96ea3731ad3302ff8f1e84",
+    "scripts/evidence-content-guard.test.mjs": "a4d0f4b18f02999acaa2ea297c55f443a3d9cda654e25f81921ec7db1a8dbcbe",
+    "scripts/evidence-contract.json": "9e2d2e52af68916590fd1a749cda55156dff31371be876e4849115462f3636e3",
+    "scripts/export-parity.mjs": "2fd52e8bf3434a883a0bfc8385051a3d283cb132882fa3c6c42352aa0d0e5d1b",
+    "scripts/package-source.mjs": "6acf4ed3f681ed8a6237530afa5580f1b0096a95e7f0786b3b6c2060628d1f8a",
+    "scripts/record-demo.mjs": "0a7dffb9e1702963a7a022df5c971a5f552fc2caff42f22099890e70f8097128",
+    "scripts/release-info.mjs": "ee02f3124900f97b9374879838c1e9b0b2bbd984b85d05aae2fff7a02b7bed05",
+    "scripts/serve.mjs": "d2e43cda06da22c496803d098851adf6590cc4d11c14e22c968c1926ce590677",
+    "scripts/server-test.mjs": "c80fd9cf4227df5a682ea124a2251fed3e10d691ab800d451130545b1e53e52a",
+    "scripts/studio-test.mjs": "2333c3400eeb3ce2384efb715db794dbad255685dabf7ffc50d1b25c23f6619e",
+    "scripts/verification-integrity.mjs": "ef6121e0bd300d3e8116e4cd74e61a62e918986757c453ed9a9ea3068c90f4ca",
+    "scripts/verify-release.mjs": "d08887a093c9e87605bd51834ebe6c9ba08e2b82e779b91437c708907273906a",
+    "scripts/verify-runner-test.mjs": "4c5f819ff0df77b10b02ee56f81df256eef490f402051afd89a107ce7c32c807",
+    "scripts/worker-lifecycle-test.mjs": "6a62929c4e3dc5e9259e56decd2559f8276a6a33c31370316487861ae1424a40",
+    "src/core/capture.ts": "44c580548ba9e32526b733ba9d0372a6b302e17e2f19d725e69e3b6ee1ecc90c",
+    "src/core/index.ts": "a907624c41bc5e21ddef78af8832e368d642b75cad7bd94827aba2f1bf66440d",
+    "src/core/runtime.ts": "adb42ab02e4e76aa257db8113fc3ab1c0854f877c20208eaafaa874bfbd25a0d",
+    "src/core/types.ts": "88a399794e4fc9449a008cc0d562048726027d01e400197d27e265b2ef096bbb",
+    "src/extension/picker.ts": "9d1e611edc22bd2837b54df015979bdf3f0fdef96eb6eafa111a079db8ab44ba",
+    "src/extension/popup.css": "cfb59a9a4661643775e013cba723c14c21f2925a4522aeaae5c3ff77205aecaf",
+    "src/extension/popup.html": "fe13f77942773c236cc57f62d47d37642603530f8024a9cfd054e41b38bce123",
+    "src/extension/popup.ts": "ea580d5f88fc885a125beacaf298c1dde63ad249396a6ad3d568cb9810cfd3de",
+    "src/extension/worker.ts": "4893f8451f64085aa68eb06bb6f4a87d8db45010841b9a93702c4662c4ff5fd6",
+    "src/studio/studio.css": "bc1923a90bcce97aab1ec80266da2d18e636719412e285f9f1f092d2caab2365",
+    "src/studio/studio.html": "bdbe0ae2ba5b9f86b32f0f89c97b42ae5ffbae43255c4b190d65514b86d20006",
+    "src/studio/studio.ts": "68e8d970fbb2db6a3b4e6f1425594db8c6f4d0f980f5f9cc9243d817999a2de0",
+    "tests/core.test.ts": "64bd5e33c4941022a443419abbc53855f6c8ed9d2c3395b875d977f5d55cc638",
+    "tests/fixtures/beta2-evidence/authorization-report.json": "8819ac245a90c4c27073271c91c4b3f706cc2ed2ed0266f78b60efa0ca705421",
+    "tests/fixtures/beta2-evidence/browser-negative-report.json": "647a443dec2dcb1b9fe78e013f07d79f771ff7857d56fae08b30792e685be698",
+    "tests/fixtures/beta2-evidence/browser-report.json": "49d48faef8609970266fb7f74f49fe78e382900a68577c1b9ebd88944d9025a0",
+    "tests/fixtures/beta2-evidence/export-parity-report.json": "279d8a10429af829e511a8052b216dc3803031cabe26e6e2ebc2e05157a0223f",
+    "tests/fixtures/beta2-evidence/independent-report.json": "704b3930ddecd393b9627a589d1fe614c2b1c30ffe259b3a6fc4519db69040d2",
+    "tests/fixtures/beta2-evidence/studio-report.json": "a083d5e60c2cd318521c33044268839bbada7ab97402f37bb156b05e3fbb15c4",
+    "tests/fixtures/evidence-fixtures.mjs": "fc0e356bfe60ca6819b19da065390db4e5cdb9842e802aebcdaee93d8a69eae9",
+    "tests/worker.test.ts": "be861e9f8a2988a44f0c79c17c1e2624742279b84be6516fe57383a7f5eb45aa",
+    "tsconfig.json": "03a9fd2eff63bfaa88b955aea762b70288ca4cf08f2e53eb4bfb5266b0621b73"
+  }
+}

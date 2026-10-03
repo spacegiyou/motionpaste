@@ -1,0 +1,44 @@
+{
+  "name": "motionpaste",
+  "version": "0.1.0-beta.3",
+  "private": true,
+  "type": "module",
+  "description": "Copy supported web motion. Keep your design.",
+  "engines": {
+    "node": "^22.13.0 || >=24"
+  },
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "build": "node scripts/build.mjs",
+    "format": "prettier --write src tests scripts fixtures package.json tsconfig.json extension eslint.config.mjs",
+    "format:check": "prettier --check src tests scripts fixtures package.json tsconfig.json extension eslint.config.mjs",
+    "lint": "eslint src tests",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test tests/*.test.ts",
+    "coverage": "c8 --reporter=text --reporter=json-summary tsx --test tests/*.test.ts",
+    "test:browser": "node scripts/browser-test.mjs",
+    "verify": "node scripts/verify-release.mjs",
+    "test:negative": "node scripts/browser-negative.mjs",
+    "record": "node scripts/record-demo.mjs",
+    "test:export": "node scripts/export-parity.mjs",
+    "test:archive": "node scripts/archive-smoke.mjs",
+    "test:server": "node --test scripts/server-test.mjs",
+    "test:runner": "node --test scripts/verify-runner-test.mjs scripts/evidence-content-guard.test.mjs",
+    "test:studio": "node scripts/studio-test.mjs",
+    "test:authorization": "node scripts/authorization-test.mjs",
+    "test:worker-lifecycle": "node scripts/worker-lifecycle-test.mjs"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/chrome": "^0.3.4",
+    "@types/node": "^26.6.4",
+    "c8": "^12.0.0",
+    "esbuild": "^0.28.2",
+    "eslint": "^10.12.0",
+    "playwright": "^1.63.0",
+    "prettier": "^3.9.9",
+    "tsx": "^4.23.15",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.71.0"
+  }
+}

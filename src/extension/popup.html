@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MotionPaste</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main>
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">m↗</span> MotionPaste
+        <small>BETA</small>
+      </div>
+      <h1>Copy the motion.<br /><span>Keep your design.</span></h1>
+      <p>
+        Select an animated element on the current web page. Its motion opens in
+        your local Studio.
+      </p>
+      <button id="capture" type="button">
+        Capture motion <span aria-hidden="true">↗</span>
+      </button>
+      <button id="studio" class="secondary" type="button">Open Studio</button>
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+      <footer>
+        Transform + opacity · CSS animations + WAAPI<br />No account. No page
+        text, URLs, or uploads.
+      </footer>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MotionPaste — independent consumer</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 60px;
+        background: #f9f7f2;
+        color: #27272c;
+      }
+      h1 {
+        font-size: 42px;
+        letter-spacing: -1.5px;
+      }
+      p {
+        max-width: 680px;
+        line-height: 1.6;
+        color: #6d6a71;
+      }
+      .stage {
+        height: 320px;
+        display: grid;
+        place-items: center;
+        background: #eeeaf6;
+        border-radius: 20px;
+        margin: 32px 0;
+        max-width: 850px;
+      }
+      #target {
+        border: 0;
+        border-radius: 100px;
+        background: #7354c5;
+        color: white;
+        font: bold 19px Arial;
+        padding: 27px 48px;
+      }
+      code {
+        font-size: 13px;
+      }
+      strong {
+        color: #27272c;
+      }
+    </style>
+  </head>
+  <body>
+    <p>INDEPENDENT CONSUMER · SELF-CONTAINED JAVASCRIPT</p>
+    <h1>Your design. A new movement.</h1>
+    <p>
+      No extension or external library is required. The exported file includes
+      validation, playback, and cleanup code. Paste it into DevTools, then call
+      <code>window.motionPaste(document.querySelector('#target'))</code>.
+    </p>
+    <div class="stage"><button id="target">Make it yours ↗</button></div>
+    <p>
+      <strong>Cleanup:</strong> retain the returned handle and call
+      <code>handle.cancel()</code>. Existing target animations cause a clear
+      conflict error.
+    </p>
+  </body>
+</html>
