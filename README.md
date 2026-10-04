@@ -1,17 +1,20 @@
 # MotionPaste
 
-**Copy the motion. Keep your design.**
+## Copy the motion. Keep your design.
 
-Capture a supported animation from your own web app, try it on a different design, change its timing, and export self-contained JavaScript.
+Capture a **supported animation from your own web app**, change its timing, and reuse it on a different UI—with self-contained JavaScript.
+
+**[Download the Chrome beta ZIP](https://github.com/spacegiyou/motionpaste/releases/download/v0.1.0-beta.3/motionpaste-0.1.0-beta.3.zip)** · [Watch the 15-second demo](docs/assets/MotionPaste-promo.mp4) · [Supported scope](#supported-scope) · [한국어 안내](00_START_HERE_KO.md)
+
+[![MotionPaste Studio showing captured motion on a different design. Watch the 15-second demo.](docs/assets/studio.png)](docs/assets/MotionPaste-promo.mp4)
+
+**Capture → retime → export.** The demo reuses one motion on two different designs and changes its duration from 1,300 to 733 ms. Actual beta.3 recordings with normal-speed cuts; not a setup-time claim.
+
+No account. No model calls. No external library needed to run the exported JavaScript. [MIT licensed](LICENSE).
+
+> **Experimental Chrome beta—not a website copier.** One supported CSS Animation or WAAPI effect; explicit 2D transform/opacity. Capture and destination checks can reject unsupported pages. Install with **Load unpacked**; not yet in the Chrome Web Store.
 
 [![CI](https://github.com/spacegiyou/motionpaste/actions/workflows/ci.yml/badge.svg)](https://github.com/spacegiyou/motionpaste/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-
-[Download the Chrome extension](https://github.com/spacegiyou/motionpaste/releases/tag/v0.1.0-beta.3) · [Watch the 15-second demo](docs/assets/MotionPaste-promo.mp4) · [한국어 시작 안내](00_START_HERE_KO.md)
-
-![MotionPaste Studio with a captured animation and a different target design](docs/assets/studio.png)
-
-MotionPaste is a local, deliberately narrow beta: no account, telemetry, cloud service, model API, or external runtime library. It copies animation effect values; it does not copy a website's design or promise the same appearance in every layout.
 
 ## Try it
 
