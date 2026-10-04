@@ -4,11 +4,11 @@
 
 Capture a **supported animation from your own web app**, change its timing, and reuse it on a different UI—with self-contained JavaScript.
 
-**[Download the Chrome beta ZIP](https://github.com/spacegiyou/motionpaste/releases/download/v0.1.0-beta.3/motionpaste-0.1.0-beta.3.zip)** · [Watch the 15-second demo](docs/assets/MotionPaste-promo.mp4) · [Supported scope](#supported-scope) · [한국어 안내](00_START_HERE_KO.md)
+**[Download the Chrome beta ZIP](https://github.com/spacegiyou/motionpaste/releases/download/v0.1.0-beta.3/motionpaste-0.1.0-beta.3.zip)** · [Watch the 15-second demo](docs/assets/launch/motionpaste-launch-15s.mp4) · [Supported scope](#supported-scope) · [한국어 안내](00_START_HERE_KO.md)
 
-[![MotionPaste Studio showing captured motion on a different design. Watch the 15-second demo.](docs/assets/studio.png)](docs/assets/MotionPaste-promo.mp4)
+[![A card and a button replay the same exported motion. Watch the 15-second demo.](docs/assets/launch/motionpaste-hero.png)](docs/assets/launch/motionpaste-launch-15s.mp4)
 
-**Capture → retime → export.** The demo reuses one motion on two different designs and changes its duration from 1,300 to 733 ms. Actual beta.3 recordings with normal-speed cuts; not a setup-time claim.
+**Capture → retime → export.** The demo reuses one motion on two different designs and changes its duration from 1,300 to 733 ms. Actual beta.3 recordings, cropped and edited at normal speed; not a setup-time claim.
 
 No account. No model calls. No external library needed to run the exported JavaScript. [MIT licensed](LICENSE).
 
